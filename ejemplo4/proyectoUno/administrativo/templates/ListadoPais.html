@@ -1,0 +1,23 @@
+<h3>{{ mititulo }}</h3>
+Número de países: {{ numero_paises }}
+<hr>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Capital</th>
+            <th>Provincias</th>
+            <th>Habitantes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in paises %}
+        <tr>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.capital }}</td>
+            <td>{{ p.numero_provincias }}</td>
+            <td>{{ p.numero_habitantes }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
