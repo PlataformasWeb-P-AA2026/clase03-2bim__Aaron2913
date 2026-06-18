@@ -71,4 +71,4 @@ def listadoEstudiantesTelefono(request):
     titulo = "Listado de estudiantes de mi aplicación"
     informacion_template = {'estudiantes': estudiantes,
     'numero_estudiantes': len(estudiantes), 'mititulo': titulo}
-    return render(request, 'listadoEstudiantes.html', informacion_template)
+    return render(request, 'listadoEstudiantesTelefono .html', informacion_template)

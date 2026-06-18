@@ -1,16 +1,38 @@
 <h3>{{ mititulo }}</h3>
-Número de estudiantes {{ numero_estudiantes }}
+Número de estudiantes: {{ estudiantes.count }}
 <hr>
-<br/>
 
 <ul>
-
 {% for e in estudiantes %}
-
-  <li>{{e}} -  {{e.nombre}} - {{e.obtener_telefono}} </li>
-
+    <li>{{ e.nombre }} - telefono({{ e.mis_numeros_telefonicos.count }})</li>
 {% endfor %}
-
 </ul>
 
 <hr>
+<br/>
+
+<h3>Detalle de Estudiantes</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Atributos (Teléfono - Tipo)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in estudiantes %}
+        <tr>
+            <td>{{ e.id }}</td>
+            <td>{{ e.nombre }}</td>
+            <td>
+                {% for t in e.mis_numeros_telefonicos.all %}
+                    {{ t.telefono }} - {{ t.tipo }} <br/>
+                {% empty %}
+                    Sin teléfonos registrados
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

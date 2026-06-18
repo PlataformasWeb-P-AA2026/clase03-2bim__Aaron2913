@@ -12,7 +12,7 @@ urlpatterns = [
         path('listado-estudiantes', views.listadoEstudiantes,
             name='listadoEstudiates'),
         path('listado/estudiantes/dos', views.listadoEstudiantesDos,
-            name='listadoEstudiatesDos'),
+            name='listadoEstudiatesDos'),  
         path('listado/estudiantes/personalizado', views.listadoEstudiantesTelefono,
-            name='listadoEstudiatesTelefono'),
+            name='listadoEstudiatesTelefono'),    
  ]
