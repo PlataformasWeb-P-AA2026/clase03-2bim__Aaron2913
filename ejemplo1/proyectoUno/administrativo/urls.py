@@ -13,4 +13,6 @@ urlpatterns = [
             name='listadoEstudiates'),
         path('listado/estudiantes/dos', views.listadoEstudiantesDos,
             name='listadoEstudiatesDos'),
+        path('listado/estudiantes/personalizado', views.listadoEstudiantesTelefono,
+            name='listadoEstudiatesTelefono'),
  ]

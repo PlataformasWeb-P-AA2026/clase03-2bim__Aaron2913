@@ -45,3 +45,30 @@ def listadoEstudiantesDos(request):
     'numero_estudiantes': len(estudiantes),
     'mis_numeros_telefonicos': mis_numeros_telefonicos}
     return render(request, 'listadoEstudiantesDos.html', informacion_template)
+
+def listadoNumeroTelefonico(request):
+    """
+    Listar los registros del modelo NumeroTelefonico,
+    obtenidos de la base de datos.
+    """
+    numeros_telefonicos = NumeroTelefonico.objects.all()
+    informacion_template = {'numeros_telefonicos': numeros_telefonicos}
+    return render(request, 'listadoNumeroTelefonico.html', informacion_template)
+
+def listadoEstudiantesTelefono(request):
+    """
+    Listar los registros del modelo Estudiante,
+    obtenidos de la base de datos.
+    """
+    # a través del ORM de django se obtiene
+    # los registros de la entidad; el listado obtenido
+    # se lo almacena en una variable llamada
+    # estudiantes
+    estudiantes = Estudiante.objects.all()
+    # en la variable tipo diccionario llamada informacion_template
+    # se agregará la información que estará disponible
+    # en el template
+    titulo = "Listado de estudiantes de mi aplicación"
+    informacion_template = {'estudiantes': estudiantes,
+    'numero_estudiantes': len(estudiantes), 'mititulo': titulo}
+    return render(request, 'listadoEstudiantes.html', informacion_template)
